@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón Neón</title>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .boton-neon {
+      position: relative;
+      display: inline-block;
+      padding: 15px 30px;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      border: 2px solid #0ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.2s;
+      overflow: hidden;
+      background-color: transparent;
+    }
+
+    .boton-neon::before,
+    .boton-neon::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle, #0ff 0%, transparent 80%);
+      opacity: 0.6;
+      z-index: -1;
+      transition: transform 0.3s ease;
+    }
+
+    .boton-neon::before {
+      transform: translate(-10px, -10px);
+    }
+
+    .boton-neon::after {
+      transform: translate(10px, 10px);
+    }
+
+    .boton-neon:hover::before {
+      transform: translate(10px, 10px);
+    }
+
+    .boton-neon:hover::after {
+      transform: translate(-10px, -10px);
+    }
+
+    .boton-neon:hover {
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://nestorguerra.webcindario.com/index.html" class="boton-neon">Hola IA</a>
+
+</body>
+</html>
